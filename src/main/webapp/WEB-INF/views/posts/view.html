@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+
+<body class="animsition">
+<div class="page-wrapper">
+    <th:block th:replace="layout:: header-mobile"></th:block>
+
+    <th:block th:replace="layout:: menu-sidebar"></th:block>
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <th:block th:replace="layout:: header-desktop"></th:block>
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div style=" margin-bottom: 1rem;     margin-left: 1rem;";>
+                            <a th:href="@{/posts/listPosts}">
+                                <button type="button" class="btn btn-primary">
+                                    Back list Posts
+                                </button>
+                            </a>
+                        </div>
+                        <di class="clear"></di>
+                        <div class="col-md-12">
+                            <!-- DATA TABLE -->
+
+                            <div class="table-responsive table-responsive-data2">
+                           <h3 th:text="${posts.titel}"></h3>
+                            </div>
+                            <!-- END DATA TABLE -->
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                        href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

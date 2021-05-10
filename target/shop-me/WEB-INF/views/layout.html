@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="head">
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Shop Me</title>
+
+    <!-- Fontfaces CSS-->
+    <!-- Fontfaces CSS-->
+    <link th:href="@{/assets/css/font-face.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/font-awesome-4.7/css/font-awesome.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/font-awesome-5/css/fontawesome-all.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/mdi-font/css/material-design-iconic-font.min.css}" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link th:href="@{/assets/vendor/bootstrap-4.1/bootstrap.min.css}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link th:href="@{/assets/vendor/animsition/animsition.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/wow/animate.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/css-hamburgers/hamburgers.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/slick/slick.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/select2/select2.min.css}" rel="stylesheet" media="all">
+    <link th:href="@{/assets/vendor/perfect-scrollbar/perfect-scrollbar.css}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link th:href="@{/assets/css/theme.css}" rel="stylesheet" media="all">
+
+    <!--    toastr-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" />
+
+    <!-- Summer note -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+</head>
+
+<body class="animsition">
+
+<th:block th:fragment="header-mobile">
+    <header class="header-mobile d-block d-lg-none">
+        <div class="header-mobile__bar">
+            <div class="container-fluid">
+                <div class="header-mobile-inner">
+                    <a class="logo" href="index.html">
+                        <img th:src="@{/assets/images/icon/logo.png}" alt="CoolAdmin"/>
+                    </a>
+                    <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar-mobile">
+            <div class="container-fluid">
+                <ul class="navbar-mobile__list list-unstyled">
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/customer}">
+                            <i class="fas fa-tachometer-alt"></i>Manager</a>
+
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</th:block>
+
+<th:block th:fragment="menu-sidebar">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar d-none d-lg-block">
+        <div class="logo">
+            <a href="#">
+                <img th:src="@{/assets/images/icon/logo.png}" alt="Cool Admin"/>
+            </a>
+        </div>
+        <div class="menu-sidebar__content js-scrollbar1">
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/customer/listCustomer}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Customer</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/province/listProvince}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Province</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/order/listOrder}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Order</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/product/listProduct}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Product</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/productType/listProductType}">
+                            <i class="fas fa-tachometer-alt"></i>Manager ProductType</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/category/listCategory}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Category</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" th:href="@{/posts/listPosts}">
+                            <i class="fas fa-tachometer-alt"></i>Manager Posts</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+</th:block>
+
+<th:block th:fragment="header-desktop">
+    <header class="header-desktop">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="header-wrap">
+                    <form class="form-header" action="" method="POST">
+                        <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                        <button class="au-btn--submit" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                    <div class="header-button">
+                        <div class="account-wrap">
+                            <div class="account-item clearfix js-item-menu">
+                                <div class="image">
+                                    <img src="/assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                </div>
+                                <div class="content">
+                                    <a href="#" sec:authentication="name"></a>
+                                </div>
+                                <div class="account-dropdown js-dropdown">
+                                    <div class="info clearfix">
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="/assets/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <h5 class="name">
+                                                <a href="#" sec:authentication="name">john doe</a>
+                                            </h5>
+                                            <span class="email" sec:authentication="name">johndoe@example.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="account-dropdown__body">
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-settings"></i>Setting</a>
+                                        </div>
+                                        <div class="account-dropdown__item">
+                                            <a href="#">
+                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="account-dropdown__footer">
+                                        <a th:href="@{/shop-me/home}">
+                                            <i class="fa fa-home"></i>Home</a>
+                                    </div>
+                                    <div class="account-dropdown__footer">
+                                        <a th:href="@{/logout}">
+                                            <i class="zmdi zmdi-power"></i>Logout</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</th:block>
+
+<th:block th:fragment="footer">
+    <!-- Jquery JS-->
+    <script th:src="@{/assets/vendor/jquery-3.2.1.min.js}"></script>
+    <!-- Bootstrap JS-->
+    <script th:src="@{/assets/vendor/bootstrap-4.1/popper.min.js}"></script>
+    <script th:src="@{/assets/vendor/bootstrap-4.1/bootstrap.min.js}"></script>
+    <!-- Vendor JS       -->
+    <script th:src="@{/assets/vendor/slick/slick.min.js}">
+    </script>
+    <script th:src="@{/assets/vendor/wow/wow.min.js}"></script>
+    <script th:src="@{/assets/vendor/animsition/animsition.min.js}"></script>
+    <script th:src="@{/assets/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js}">
+    </script>
+    <script th:src="@{/assets/vendor/counter-up/jquery.waypoints.min.js}"></script>
+    <script th:src="@{/assets/vendor/counter-up/jquery.counterup.min.js}">
+    </script>
+    <script th:src="@{/assets/vendor/circle-progress/circle-progress.min.js}"></script>
+    <script th:src="@{/assets/vendor/perfect-scrollbar/perfect-scrollbar.js}"></script>
+    <script th:src="@{/assets/vendor/chartjs/Chart.bundle.min.js}"></script>
+    <script th:src="@{/assets/vendor/select2/select2.min.js}">
+    </script>
+
+    <!-- Main JS-->
+    <script th:src="@{/assets/js/main.js}"></script>
+
+    <!--    toastr-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+</th:block>
+</body>
+
+</html>
+<!-- end document-->

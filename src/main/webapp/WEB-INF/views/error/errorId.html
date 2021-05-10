@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+
+<body style="">
+
+<div class="page-wrapper">
+    <th:block th:replace="layout:: header-mobile"></th:block>
+
+    <th:block th:replace="layout:: menu-sidebar"></th:block>
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <th:block th:replace="layout:: header-desktop"></th:block>
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div>
+                        <a th:href="@{/province/listProvince}">
+                            <button type="button" class="btn btn-primary">
+                                Back to list Province
+                            </button>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <h3 style="margin-top: 3rem;margin-left: 1rem;">
+                            There is no Client in this list of Provinces</h3>
+                    </div>
+                    <div align="center">
+                        <img style="width: 35rem;
+    border-radius: 2rem;" src="https://visitroseville.com/wp-content/uploads/2014/09/Taco.gif">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

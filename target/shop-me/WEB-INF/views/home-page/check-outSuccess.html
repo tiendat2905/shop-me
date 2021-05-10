@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/home-page-layout::head">
+
+</head>
+<body class="animsition">
+
+<!-- Header -->
+<th:block th:replace="home-page-layout::header-shop"/>
+
+<!-- Cart -->
+<th:block th:replace="/home-page-layout::cart"/>
+
+<!-- Product -->
+<!-- breadcrumb -->
+
+<div align="center">
+    <div>
+        <img style="width: 30rem;" src="https://previews.123rf.com/images/deniex3/deniex31912/deniex3191200594/136058493-green-check-mark-icon-in-a-circle-tick-symbol-in-green-color-vector-illustration-.jpg" alt="">
+    </div>
+    <div>
+        <h4>Mua sắm thành công</h4>
+    </div>
+    <div style="padding-top: 1rem">
+        <h4>Cảm ơn bạn đã ủng hộ shop chúng tôi, chúc bạn mua sắm vui vẻ..!</h4>
+    </div>
+    <div style="padding-top: 1rem">
+        <a th:href="@{/shop-me/shop}">Mua sắm tiếp nào! </a>
+        <a th:href="@{/shop-me/home}">Ghé thắm shop nhé</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<th:block th:replace="/home-page-layout::footer"/>
+
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
+      <span class="symbol-btn-back-to-top">
+        <i class="zmdi zmdi-chevron-up"></i>
+      </span>
+</div>
+
+<th:block th:replace="/home-page-layout::block-script"/>
+</body>
+</html>

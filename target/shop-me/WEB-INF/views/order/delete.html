@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+
+<body class="animsition">
+<div class="page-wrapper">
+    <th:block th:replace="layout:: header-mobile"></th:block>
+
+    <th:block th:replace="layout:: menu-sidebar"></th:block>
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <th:block th:replace="layout:: header-desktop"></th:block>
+
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <!--                                <div class="col-12 col-md-12" th:if="${message!=null}">-->
+                                <!--                                    <div class="alert alert-success"><i th:text="${message}"></i></div>-->
+                                <!--                                </div>-->
+                            </div>
+                            <div class="card-header">
+                                <a th:href="@{/product/listProduct}">
+                                    <button type="primary" class="btn btn-primary btn-sm">
+                                        <strong>Back to list Product</strong>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Delete Product</strong>
+                                </div>
+                                <div class="card-body card-block">
+                                    <form method="post" class="form-horizontal"
+                                          th:action="@{/order/deleteOrder}" th:object="${order}"
+                                          ENCTYPE="multipart/form-data">
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label"></label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="hidden" th:field="*{id}"
+                                                       placeholder="Name" required="required"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label">Customer</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" th:field="*{customer}"
+                                                       placeholder="Name" required="required"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label">Status</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" th:field="*{status}"
+                                                       placeholder="Name" required="required"
+                                                       class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-success btn-sm"
+                                                    onclick="return confirm('Bạn có muốn xóa mục này không.!!')">
+                                                <i class="fa fa-dot-circle-o" ></i> Delete
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Reset
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                        href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

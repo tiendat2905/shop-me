@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+
+<body style="">
+
+<div class="page-wrapper">
+    <th:block th:replace="layout:: header-mobile"></th:block>
+
+    <th:block th:replace="layout:: menu-sidebar"></th:block>
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <th:block th:replace="layout:: header-desktop"></th:block>
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                        <div class="dropdown">
+                            <button class="dropbtn">Come back to List</button>
+                            <div class="dropdown-content">
+                                <a th:href="@{/customer/listCustomer}">List Customer</a>
+                                <a th:href="@{/province/listProvince}">List  Province</a>
+                                <a th:href="@{/order/listOrder}">List  Order</a>
+                                <a th:href="@{/product/listProduct}">List  Product</a>
+                                <a th:href="@{/productType/listProductType}">List  Product Type</a>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <h3 style="margin-top: 3rem;margin-left: 1rem;">
+                            There is no object in the list</h3>
+                    </div>
+                    <div align="center">
+                        <img style="width: 35rem;
+    border-radius: 2rem;"
+                             src="https://steamuserimages-a.akamaihd.net/ugc/539646410283684592/1DBAC50CF76327B305BF2FEE5113E89DC5D8BFDE/">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>

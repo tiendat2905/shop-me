@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+
+<body class="animsition">
+
+<div class="page-wrapper">
+    <th:block th:replace="layout:: header-mobile"></th:block>
+
+    <th:block th:replace="layout:: menu-sidebar"></th:block>
+
+
+    <!-- PAGE CONTAINER-->
+    <div class="page-container">
+        <th:block th:replace="layout:: header-desktop"></th:block>
+
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-12 col-md-12" th:if="${message!=null}">
+                                    <div class="alert alert-success"><i th:text="${message}"></i></div>
+                                </div>
+                            </div>
+                            <div class="card-header">
+                                <a th:href="@{/customer/listCustomer}">
+                                    <button type="primary" class="btn btn-primary btn-sm">
+                                        <strong>Back to list Customer</strong>
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong>Create Customer</strong>
+                                </div>
+                                <div class="card-body card-block">
+                                    <form method="post" class="form-horizontal"
+                                          th:action="@{/customer/saveCustomer}" th:object="${customer}">
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Name</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="text-input" th:field="*{customerName}" placeholder="Name"
+                                                       required="required"    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label  class=" form-control-label"></label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <h6 style="color: red" class="alert alert-warning" th:if="${#fields.hasErrors('customerName')}"
+                                                    th:errors="*{customerName}">>Name Error</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="email" class=" form-control-label">Email</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="email" id="email" th:field="*{email}" placeholder="email"
+                                                       required="required"    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label  class=" form-control-label"></label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <h6 style="color: red" class="alert alert-warning" th:if="${#fields.hasErrors('email')}"
+                                                    th:errors="*{email}">Name Error</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="address" class=" form-control-label">Address</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="address" th:field="*{address}" placeholder="Address"
+                                                       required="required"  class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label  class=" form-control-label"></label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <h6 style="color: red" class="alert alert-warning" th:if="${#fields.hasErrors('address')}"
+                                                    th:errors="*{address}">Name Error</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="phoneNumber" class=" form-control-label">Phone Number</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="phoneNumber" th:field="*{phoneNumber}" placeholder="Address"
+                                                       required="required"     class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label  class=" form-control-label"></label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <h6 style="color: red" class="alert alert-warning" th:if="${#fields.hasErrors('phoneNumber')}"
+                                                    th:errors="*{phoneNumber}">Name Error</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="address" class=" form-control-label">Province</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <select class="form-control" th:field="*{province.id}">
+                                                    <option value="" > Select Province</option>
+                                                    <option th:each="pro: ${province}" th:value="${pro.id}" th:utext="${pro.provinceName}"></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-success btn-sm">
+                                                <i class="fa fa-dot-circle-o"></i> Save
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Reset
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="copyright">
+                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                        href="https://colorlib.com">Colorlib</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<footer th:replace="layout::footer"></footer>
+</body>
+</html>
